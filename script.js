@@ -60,21 +60,48 @@ function playRound() {
     }
     else if(humanChoice === "paper")
     {
-        if(computerChoice === "rock") ++humanScore;
-        else ++computerScore;
+        if(computerChoice === "rock")
+            {
+                ++humanScore;
+                alert("paper beats rock, human wins");
+            }
+        else
+        { 
+            ++computerScore;
+            alert("scissor beats paper, computer wins");
+
+        }
     }
     else if(humanChoice === "rock")
     {
-        if(computerChoice == "scissors") ++humanScore;
-        else ++computerScore;
+        if(computerChoice == "scissors") 
+        {
+            ++humanScore;
+            alert("rock beats scissors, human wins");
+
+        }
+        else 
+        {
+            ++computerScore;
+            alert("paper beats rock, computer wins");  
+        }
     }
     else if(humanChoice == "scissors")
     {
-        if(computerChoice == "paper") ++humanScore;
-        else ++computerScore;
+        if(computerChoice == "paper")
+            {
+                ++humanScore;
+                alert("scissors beats paper, human wins");
+
+            }
+        else 
+        {
+            ++computerScore;
+            alert("rock beats scissors, human wins");
+        }
     }
 }
 
-playRound();
+// playRound();
 
-console.log(`human score: ${humanScore} and computer score: ${computerScore}`);
+// console.log(`human score: ${humanScore} and computer score: ${computerScore}`);
