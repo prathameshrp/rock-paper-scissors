@@ -44,8 +44,9 @@ function getComputerChoice()
 // console.log(getComputerChoice());
 
 function getHumanChoice() {
-    let humanChooses = prompt("Enter a choice between rock, paper and scissors: ").toLowerCase();
-    return humanChooses;
+    let humanChooses = prompt("Enter a choice between rock, paper and scissors: ");
+    if(humanChooses == null) return "InValid Choice";
+    return humanChooses.toLowerCase();
 }
 
 // console.log(getHumanChoice());
