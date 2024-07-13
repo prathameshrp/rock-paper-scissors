@@ -49,3 +49,32 @@ function getHumanChoice() {
 }
 
 // console.log(getHumanChoice());
+
+function playRound() {
+    let humanChoice = getHumanChoice();
+    let computerChoice = getComputerChoice();
+
+    if(humanChoice === computerChoice)
+    {
+        alert(`It's a TIE between ${humanChoice} and ${computerChoice}`);
+    }
+    else if(humanChoice === "paper")
+    {
+        if(computerChoice === "rock") ++humanScore;
+        else ++computerScore;
+    }
+    else if(humanChoice === "rock")
+    {
+        if(computerChoice == "scissors") ++humanScore;
+        else ++computerScore;
+    }
+    else if(humanChoice == "scissors")
+    {
+        if(computerChoice == "paper") ++humanScore;
+        else ++computerScore;
+    }
+}
+
+playRound();
+
+console.log(`human score: ${humanScore} and computer score: ${computerScore}`);
