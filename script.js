@@ -99,6 +99,10 @@ function playRound(humanChoice, computerChoice) {
             alert("rock beats scissors, human wins");
         }
     }
+    else
+    {
+        alert("Given inputs are not valid options!");
+    }
 }
 
 // playRound();
@@ -125,3 +129,5 @@ function playGame() {
         alert( `It's a tie! \n final score -human:${humanScore} computer:${computerScore}`)
     }
 }
+
+playGame();
