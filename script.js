@@ -45,7 +45,11 @@ function getComputerChoice()
 
 function getHumanChoice() {
     let humanChooses = prompt("Enter a choice between rock, paper and scissors: ");
-    if(humanChooses == null) return "InValid Choice";
+    if(humanChooses == null) 
+    {   
+        alert("Given inputs are not valid options! Try again?");
+        return getHumanChoice();
+    }
     return humanChooses.toLowerCase();
 }
 
@@ -58,51 +62,27 @@ function playRound(humanChoice, computerChoice) {
     {
         alert(`It's a TIE between ${humanChoice} and ${computerChoice}`);
     }
-    else if(humanChoice === "paper")
+    else if(humanChoice === "paper" && computerChoice === "rock")
     {
-        if(computerChoice === "rock")
-            {
-                ++humanScore;
-                alert("paper beats rock, human wins");
-            }
-        else
-        { 
-            ++computerScore;
-            alert("scissor beats paper, computer wins");
-
-        }
+        ++humanScore;
+        alert("paper beats rock, human wins");         
+     
     }
-    else if(humanChoice === "rock")
+    else if(humanChoice === "rock" && computerChoice === "scissors")
     {
-        if(computerChoice == "scissors") 
-        {
-            ++humanScore;
-            alert("rock beats scissors, human wins");
-
-        }
-        else 
-        {
-            ++computerScore;
-            alert("paper beats rock, computer wins");  
-        }
+        ++humanScore;
+        alert("rock beats scissors, human wins");
     }
-    else if(humanChoice == "scissors")
+    else if(humanChoice === "scissors" && computerChoice === "paper")
     {
-        if(computerChoice == "paper")
-            {
-                ++humanScore;
-                alert("scissors beats paper, human wins");
-
-            }
-        else 
-        {
-            ++computerScore;
-            alert("rock beats scissors, human wins");
-        }
+        ++humanScore;
+        alert("scissors beats paper, human wins");
     }
+
     else
     {
-        alert("Given inputs are not valid options!");
+        ++computerScore;
+        alert(`${computerChoice} beats ${humanChoice}, computer wins`);
     }
 }
 
