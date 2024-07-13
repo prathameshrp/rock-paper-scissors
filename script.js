@@ -62,23 +62,12 @@ function playRound(humanChoice, computerChoice) {
     {
         alert(`It's a TIE between ${humanChoice} and ${computerChoice}`);
     }
-    else if(humanChoice === "paper" && computerChoice === "rock")
+    else if(humanChoice === "paper" && computerChoice === "rock" || humanChoice === "rock" && computerChoice === "scissors" || humanChoice === "scissors" && computerChoice === "paper")
     {
         ++humanScore;
-        alert("paper beats rock, human wins");         
+        alert(`${humanChoice} beats ${computerChoice}, human wins`);         
      
     }
-    else if(humanChoice === "rock" && computerChoice === "scissors")
-    {
-        ++humanScore;
-        alert("rock beats scissors, human wins");
-    }
-    else if(humanChoice === "scissors" && computerChoice === "paper")
-    {
-        ++humanScore;
-        alert("scissors beats paper, human wins");
-    }
-
     else
     {
         ++computerScore;
