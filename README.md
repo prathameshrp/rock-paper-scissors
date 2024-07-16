@@ -1,2 +1,2 @@
-# rock-paper-scissors
-A console based rock paper scissors game
+# ROCK • PAPER • SCISSORS
+A web based game of rock, paper, scissors
