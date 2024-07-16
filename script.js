@@ -48,6 +48,7 @@ function getComputerChoice()
 function playRound(humanChoice, computerChoice) {
   
     const p = document.createElement("p");
+    p.setAttribute("class", "innerScore");
     if(humanChoice === computerChoice)
     {
         p.textContent = `\n It's a TIE between ${humanChoice} and ${computerChoice}`;
@@ -76,15 +77,19 @@ function playRound(humanChoice, computerChoice) {
 function endResult() {
 
     score_div.textContent = '';
+    const p = document.createElement("p");
+    p.setAttribute("class", "innerScore");
     if(humanScore > computerScore)
     {
-        score_div.textContent = `Congratulations! you win!! \n final score - human:${humanScore} computer:${computerScore}`;
+        score_div.textContent = `Congratulations! you win!!`; p.textContent = `You:${humanScore} Computer:${computerScore}`;
     }
     else if(humanScore < computerScore)
     {
-        score_div.textContent = `You Lose! \n final score - human:${humanScore} computer:${computerScore}`;
+        score_div.textContent = `You Lose!`;
+        p.textContent = `You:${humanScore} Computer:${computerScore}`;
     }
 
+    score_div.appendChild(p);
     humanScore = 0;
     computerScore = 0;
 }
