@@ -94,11 +94,36 @@ function endResult() {
     computerScore = 0;
 }
 
+const i = document.querySelector("i");
+const h_sibling = document.createElement("p");
+const c_sibling = document.createElement("p");
+const h = document.querySelector(".humanHand");
+
 btn_cont.addEventListener("click", (e) => {
     const humanChooses = e.target.value;
-
     if(!humanChooses) return;
 
+    createBottomText(h_sibling, humanChooses);
+    h.appendChild(h_sibling);
+   
+
     const computerChooses = getComputerChoice();
+
+    createBottomText(c_sibling, computerChooses);
+    h.nextElementSibling.appendChild(c_sibling);
+   
+
+    // changeIcons(humanChooses, computerChooses);
     playRound(humanChooses,computerChooses);
 });
+
+function createBottomText(node, value)
+{
+    node.textContent = value;
+    node.setAttribute("class", "identifier");
+    node.style.cssText = "margin-top: 40px; margin-bottom: 0;";
+}
+
+// function changeIcons(human, computer) {
+    
+// }
