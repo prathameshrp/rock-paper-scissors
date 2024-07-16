@@ -116,7 +116,7 @@ btn_cont.addEventListener("click", (e) => {
         i[j].setAttribute("style", "color: #2b5c5f; opacity: 1;");
     
     changeIcons(humanChooses, computerChooses);
-    playRound(humanChooses,computerChooses);
+    playRound(humanChooses.toLowerCase(),computerChooses.toLocaleLowerCase());
 });
 
 function createBottomText(node, value)
