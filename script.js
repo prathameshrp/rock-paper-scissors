@@ -31,13 +31,13 @@ function getComputerChoice()
     let computerChooses =  Math.floor(Math.random()*3);
     switch (computerChooses) {
         case 0:
-            return "paper";
+            return "Paper";
             break;
         case 1:
-            return "rock";
+            return "Rock";
             break;
         case 2:
-            return "scissors";
+            return "Scissors";
             break;
         default:
             break;
@@ -94,7 +94,7 @@ function endResult() {
     computerScore = 0;
 }
 
-const i = document.querySelector("i");
+const i = document.querySelectorAll("i");
 const h_sibling = document.createElement("p");
 const c_sibling = document.createElement("p");
 const h = document.querySelector(".humanHand");
@@ -112,8 +112,10 @@ btn_cont.addEventListener("click", (e) => {
     createBottomText(c_sibling, computerChooses);
     h.nextElementSibling.appendChild(c_sibling);
    
-
-    // changeIcons(humanChooses, computerChooses);
+    for(let j = 0; j<i.length; ++j)
+        i[j].setAttribute("style", "color: #2b5c5f; opacity: 1;");
+    
+    changeIcons(humanChooses, computerChooses);
     playRound(humanChooses,computerChooses);
 });
 
@@ -124,6 +126,29 @@ function createBottomText(node, value)
     node.style.cssText = "margin-top: 40px; margin-bottom: 0;";
 }
 
-// function changeIcons(human, computer) {
-    
-// }
+
+
+function changeIcons(human, computer) {
+    const h_i = document.querySelector("#hicon");
+    const c_i = document.querySelector("#cicon");
+
+    const hClassName = getClassForIcon(human);
+    const cClassName = getClassForIcon(computer);
+
+    h_i.className = `fa-regular ${hClassName}`;
+    c_i.className = `fa-regular ${cClassName}`;
+}
+
+function getClassForIcon(value)
+{
+    switch(value.toLowerCase())
+    {
+        case 'rock':
+            return 'fa-hand-back-fist';
+        case 'paper':
+            return 'fa-hand';
+        case 'scissors':
+            return 'fa-hand-scissors';
+    }
+    return 'ERROR';
+}
