@@ -7,6 +7,6 @@
     "action": {
       "default_popup": "index.html",
       "default_title": "Let's Rock, Paper and Scissors",
-      "default_icon": "symbol.jpg"
+      "default_icon": "./symbol.jpg"
     }
   }
