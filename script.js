@@ -51,7 +51,7 @@ function playRound(humanChoice, computerChoice) {
     p.setAttribute("class", "innerScore");
     if(humanChoice === computerChoice)
     {
-        p.textContent = `\n It's a TIE between ${humanChoice} and ${computerChoice}`;
+        p.textContent = `\n It's a TIE between ${humanChoice}`;
         
     }
     else if(humanChoice === "paper" && computerChoice === "rock" || humanChoice === "rock" && computerChoice === "scissors" || humanChoice === "scissors" && computerChoice === "paper")
