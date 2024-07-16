@@ -134,6 +134,10 @@ function changeIcons(human, computer) {
 
     const hClassName = getClassForIcon(human);
     const cClassName = getClassForIcon(computer);
+    
+    if(hClassName === 'fa-hand-scissors')
+    h_i.style.rotate = "180deg";
+
 
     h_i.className = `fa-regular ${hClassName}`;
     c_i.className = `fa-regular ${cClassName}`;
