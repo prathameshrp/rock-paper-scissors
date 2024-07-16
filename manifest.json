@@ -1,0 +1,12 @@
+{
+    "manifest_version": 3,
+    "name": "Rock Paper Scissors Game",
+    "description": "A chrome extension for playing rock, paper, scissors on the go!",
+    "version": "1.0",
+    "author": "Prathamesh Patil",
+    "action": {
+      "default_popup": "index.html",
+      "default_title": "Let's Rock, Paper and Scissors",
+      "default_icon": "symbol.jpg"
+    }
+  }

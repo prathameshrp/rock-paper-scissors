@@ -94,7 +94,6 @@ function endResult() {
     computerScore = 0;
 }
 
-const i = document.querySelectorAll("i");
 const h_sibling = document.createElement("p");
 const c_sibling = document.createElement("p");
 const h = document.querySelector(".humanHand");
@@ -111,11 +110,8 @@ btn_cont.addEventListener("click", (e) => {
 
     createBottomText(c_sibling, computerChooses);
     h.nextElementSibling.appendChild(c_sibling);
-   
-    for(let j = 0; j<i.length; ++j)
-        i[j].setAttribute("style", "color: #2b5c5f; opacity: 1;");
     
-    changeIcons(humanChooses, computerChooses);
+    changeIcons(humanChooses.toLocaleLowerCase(), computerChooses.toLocaleLowerCase());
     playRound(humanChooses.toLowerCase(),computerChooses.toLocaleLowerCase());
 });
 
@@ -123,36 +119,22 @@ function createBottomText(node, value)
 {
     node.textContent = value;
     node.setAttribute("class", "identifier");
-    node.style.cssText = "margin-top: 40px; margin-bottom: 0;";
+    node.style.cssText = "margin-top: 20px; margin-bottom: 0;";
 }
-
 
 
 function changeIcons(human, computer) {
     const h_i = document.querySelector("#hicon");
     const c_i = document.querySelector("#cicon");
-
-    const hClassName = getClassForIcon(human);
-    const cClassName = getClassForIcon(computer);
     
-    if(hClassName === 'fa-hand-scissors')
+
+    if(human === 'scissors')
     h_i.style.rotate = "180deg";
+    else h_i.style.rotate = "0deg";
 
 
-    h_i.className = `fa-regular ${hClassName}`;
-    c_i.className = `fa-regular ${cClassName}`;
+    h_i.setAttribute("src", `./images/${human}.svg`);
+    c_i.setAttribute ("src", `./images/${computer}.svg`);
 }
 
-function getClassForIcon(value)
-{
-    switch(value.toLowerCase())
-    {
-        case 'rock':
-            return 'fa-hand-back-fist';
-        case 'paper':
-            return 'fa-hand';
-        case 'scissors':
-            return 'fa-hand-scissors';
-    }
-    return 'ERROR';
-}
+
